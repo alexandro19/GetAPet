@@ -13,6 +13,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jessica\",\r\n    \"email\": \"jessica_moren@outlook.com\",\r\n    \"phone\": \"43984411225\",\r\n    \"password\": \"123456\",\r\n    \"confirmpassword\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{URL}}users/register",
 							"host": [
@@ -20,6 +29,113 @@
 							],
 							"path": [
 								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"email\": \"ale_go121@hotmail.com\",\r\n   \"password\": \"123456\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}users/login",
+							"host": [
+								"{{URL}}users"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/checkUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}users/checkUser",
+							"host": [
+								"{{URL}}users"
+							],
+							"path": [
+								"checkUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}users/{{idUsuario}}",
+							"host": [
+								"{{URL}}users"
+							],
+							"path": [
+								"{{idUsuario}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/edit/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Alexandro Gotardo\",\r\n    \"email\": \"ale_go121@hotmail.com\",\r\n    \"phone\": \"43984411225\",\r\n    \"password\": \"123456\",\r\n    \"confirmpassword\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}users/edit/{{idUsuario}}",
+							"host": [
+								"{{URL}}users"
+							],
+							"path": [
+								"edit",
+								"{{idUsuario}}"
 							]
 						}
 					},
@@ -56,6 +172,16 @@
 		{
 			"key": "URL",
 			"value": "http://localhost:5000/",
+			"type": "default"
+		},
+		{
+			"key": "TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWxleGFuZHJvIGdvdGFyZG8iLCJpZCI6IjYyNjk0YTcwMTc1N2Q0MjZkNzcyZWU0MCIsImlhdCI6MTY1MTA2OTg5M30.dyxbs4lBnEZt9D98d0DzkQtiaGOLu_-pDYGg7DjmPwM",
+			"type": "default"
+		},
+		{
+			"key": "idUsuario",
+			"value": "62694a701757d426d772ee40",
 			"type": "default"
 		}
 	]
