@@ -120,8 +120,39 @@
 						"method": "PATCH",
 						"header": [],
 						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Alexandro Gotardo\",\r\n    \"email\": \"ale_go121@hotmail.com\",\r\n    \"phone\": \"43984411225\",\r\n    \"password\": \"123456\",\r\n    \"confirmpassword\": \"123456\"\r\n}",
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Alexandro Gotardo",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "ale_go121@hotmail.com",
+									"type": "default"
+								},
+								{
+									"key": "phone",
+									"value": "43984411225",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "default"
+								},
+								{
+									"key": "confirmpassword",
+									"value": "123456",
+									"type": "default"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Desenvolvimento/Desktop/perfil.jpg"
+								}
+							],
 							"options": {
 								"raw": {
 									"language": "json"
@@ -145,7 +176,91 @@
 		},
 		{
 			"name": "Pet",
-			"item": []
+			"item": [
+				{
+					"name": "pets/create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Bruto",
+									"type": "default"
+								},
+								{
+									"key": "age",
+									"value": "5",
+									"type": "default"
+								},
+								{
+									"key": "weight",
+									"value": "25",
+									"type": "default"
+								},
+								{
+									"key": "color",
+									"value": "marron",
+									"type": "default"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": [
+										"/C:/Users/Desenvolvimento/Desktop/cachorros/foto1.jpg",
+										"/C:/Users/Desenvolvimento/Desktop/cachorros/foto2.jpg",
+										"/C:/Users/Desenvolvimento/Desktop/cachorros/foto3.jpg"
+									]
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}pets/create",
+							"host": [
+								"{{URL}}pets"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/pets/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}pets/",
+							"host": [
+								"{{URL}}pets"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [
