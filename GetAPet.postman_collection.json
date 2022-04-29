@@ -218,11 +218,7 @@
 								{
 									"key": "images",
 									"type": "file",
-									"src": [
-										"/C:/Users/Desenvolvimento/Desktop/cachorros/foto1.jpg",
-										"/C:/Users/Desenvolvimento/Desktop/cachorros/foto2.jpg",
-										"/C:/Users/Desenvolvimento/Desktop/cachorros/foto3.jpg"
-									]
+									"src": []
 								}
 							],
 							"options": {
@@ -259,6 +255,217 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "pets/mypets",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}pets/mypets",
+							"host": [
+								"{{URL}}pets"
+							],
+							"path": [
+								"mypets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pets/myadoptions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}pets/myadoptions",
+							"host": [
+								"{{URL}}pets"
+							],
+							"path": [
+								"myadoptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pets/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}pets/:id",
+							"host": [
+								"{{URL}}pets"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idPet}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pets/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}pets/:id",
+							"host": [
+								"{{URL}}pets"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idPet}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pets/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}pets/:id",
+							"host": [
+								"{{URL}}pets"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idPet}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pets/schedule/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}pets/schedule/:id",
+							"host": [
+								"{{URL}}pets"
+							],
+							"path": [
+								"schedule",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idPet}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}pets/conclude/:id",
+							"host": [
+								"{{URL}}pets"
+							],
+							"path": [
+								"conclude",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idPet}}"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
@@ -291,12 +498,17 @@
 		},
 		{
 			"key": "TOKEN",
-			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWxleGFuZHJvIGdvdGFyZG8iLCJpZCI6IjYyNjk0YTcwMTc1N2Q0MjZkNzcyZWU0MCIsImlhdCI6MTY1MTA2OTg5M30.dyxbs4lBnEZt9D98d0DzkQtiaGOLu_-pDYGg7DjmPwM",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWxleGFuZHJvIEdvdGFyZG8iLCJpZCI6IjYyNjk0YTcwMTc1N2Q0MjZkNzcyZWU0MCIsImlhdCI6MTY1MTI0Njk2Mn0.sse_EMNZM4mBHcmqVDmh1ZzPKqQ-Z6zx1USL3XlKMY8",
 			"type": "default"
 		},
 		{
 			"key": "idUsuario",
 			"value": "62694a701757d426d772ee40",
+			"type": "default"
+		},
+		{
+			"key": "idPet",
+			"value": "626abdd408d69a3db8f4759c",
 			"type": "default"
 		}
 	]
