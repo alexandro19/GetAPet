@@ -82,15 +82,6 @@ module.exports = class PetController{
   }
 
   static async getAllUserPets(req, res){
-    
-    console.log('teste')
-
-    res.status(200).json({
-      message: 'parabens'
-    })
-
-    return
-
     //get user from token
     const token = getToken(req)
     const user  = await getUserByToken(token)
